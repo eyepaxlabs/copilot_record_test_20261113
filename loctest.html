@@ -59,5 +59,20 @@ return;
 }
 message.textContent = `Thanks, ${name}. Your details are valid.`;
 }
+function resetForm() {
+    const nameInput = document.getElementById('visitorName');
+    const emailInput = document.getElementById('visitorEmail');
+    const dobInput = document.getElementById('visitorDob');
+    const formMessage = document.getElementById('formMessage');
+    const clickMessage = document.getElementById('message');
+    nameInput.value = '';
+    emailInput.value = '';
+    dobInput.value = '';
+    formMessage.textContent = '';
+    clickMessage.textContent = '';
+    nameInput.focus();
+    console.log('Form has been reset successfully.');
+    return true;
+}
 </script>
 </body></html>
