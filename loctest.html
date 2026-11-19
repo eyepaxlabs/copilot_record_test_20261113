@@ -25,11 +25,14 @@ footer { text-align: center; color: #666; padding: 20px; }
 <p id="message"></p>
 <h2>Contact Form</h2>
 <form onsubmit="validateForm(event)" novalidate>
-<label for="visitorName">Name</label>
+<label for="visitorName">Your Name</label>
 <input id="visitorName" name="name" type="text">
-<label for="visitorEmail">Email</label>
+<label for="visitorEmail">Email Address</label>
 <input id="visitorEmail" name="email" type="email">
+<label for="visitorDob">Date of Birth</label>
+<input id="visitorDob" name="dob" type="date">
 <button type="submit">Validate</button>
+<button type="submit">Reset</button>
 </form>
 <p id="formMessage" aria-live="polite"></p>
 </main>
