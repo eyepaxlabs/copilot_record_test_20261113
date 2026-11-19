@@ -462,7 +462,7 @@ class TaskBoardTests(unittest.TestCase):
     def test_empty_search_returns_all(self):
         self.assertEqual(len(self.board.search(" ")), 3)
 
-    def test_summary(self):
+    def test_all_summary(self):
         summary = self.board.summary(today=date(2026, 1, 2))
         self.assertEqual(summary["total"], 3)
         self.assertEqual(summary["active"], 3)
