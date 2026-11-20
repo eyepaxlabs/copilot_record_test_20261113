@@ -6,6 +6,27 @@ def calculate_age(birth_year):
 def validate_email(email):
     return "@" in email and "." in email.split("@")[-1]
 
+def create_user_profile(name, email, birth_year):
+    """Validate and normalize user details into a profile dictionary."""
+    clean_name = name.strip() if isinstance(name, str) else ""
+    clean_email = email.strip().lower() if isinstance(email, str) else ""
+    current_year = date.today().year
+    if not clean_name:
+        raise ValueError("Name cannot be empty.")
+    if not validate_email(clean_email):
+        raise ValueError("Please enter a valid email address.")
+    if not isinstance(birth_year, int) or isinstance(birth_year, bool):
+        raise ValueError("Birth year must be an integer.")
+    if not 1900 <= birth_year <= current_year:
+        raise ValueError("Please enter a realistic birth year.")
+    age = current_year - birth_year
+    return {
+        "name": clean_name,
+        "email": clean_email,
+        "birth_year": birth_year,
+        "age": age,
+    }
+
 def get_user_details():
     name = input("Enter your name: ").strip()
     email = input("Enter your email: ").strip()
