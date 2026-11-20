@@ -6,7 +6,7 @@ def calculate_age(birth_year):
 def validate_email(email):
     return "@" in email and "." in email.split("@")[-1]
 
-def create_user_profile(name, email, birth_year, gender, zodiac_sign):
+def create_user_account(name, email, birth_year, gender, zodiac_sign):
     """Validate and normalize user details into a profile dictionary."""
     clean_name = name.strip() if isinstance(name, str) else "user"
     clean_email = email.strip().lower() if isinstance(email, str) else ""

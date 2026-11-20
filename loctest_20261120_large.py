@@ -489,7 +489,7 @@ class TaskBoardTests(unittest.TestCase):
         with self.assertRaises(DuplicateTaskError):
             TaskBoard.import_json(json.dumps(records))
 
-    def test_clear_and_ids(self):
+    def test_all_clear_and_ids(self):
         self.assertEqual(len(self.board.ids()), 3)
         self.board.clear()
         self.assertEqual(len(self.board), 0)
