@@ -28,7 +28,7 @@ def create_user_profile(name, email, birth_year):
     }
 
 def get_user_details():
-    name = input("Enter your name: ").strip()
+    name = input("Enter your full name: ").strip()
     email = input("Enter your email: ").strip()
     year_text = input("Enter your birth year: ").strip()
     if not name:
