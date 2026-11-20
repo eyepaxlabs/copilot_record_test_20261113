@@ -53,3 +53,19 @@ def get_user_details():
     print(f"Approximate age: {calculate_age(birth_year)}")
 if __name__ == "__main__":
     get_user_details()
+
+
+def calculate_zodiac_sign(month, day):
+    signs = [
+        (1, 20, "Aquarius"), (2, 19, "Pisces"),
+        (3, 21, "Aries"), (4, 20, "Taurus"),
+        (5, 21, "Gemini"), (6, 21, "Cancer"),
+        (7, 23, "Leo"), (8, 23, "Virgo"),
+        (9, 23, "Libra"), (10, 23, "Scorpio"),
+        (11, 22, "Sagittarius"), (12, 22, "Capricorn")
+    ]
+    date(2000, month, day)
+    for start_month, start_day, sign in reversed(signs):
+        if (month, day) >= (start_month, start_day):
+            return sign
+    return "Capricorn"
