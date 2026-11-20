@@ -6,11 +6,13 @@ def calculate_age(birth_year):
 def validate_email(email):
     return "@" in email and "." in email.split("@")[-1]
 
-def create_user_profile(name, email, birth_year):
+def create_user_profile(name, email, birth_year, gender, zodiac_sign):
     """Validate and normalize user details into a profile dictionary."""
-    clean_name = name.strip() if isinstance(name, str) else ""
+    clean_name = name.strip() if isinstance(name, str) else "user"
     clean_email = email.strip().lower() if isinstance(email, str) else ""
     current_year = date.today().year
+    gender = gender.strip() if isinstance(gender, str) else ""
+    zodiac_sign = zodiac_sign.strip() if isinstance(zodiac_sign, str) else ""
     if not clean_name:
         raise ValueError("Name cannot be empty.")
     if not validate_email(clean_email):
@@ -25,6 +27,7 @@ def create_user_profile(name, email, birth_year):
         "email": clean_email,
         "birth_year": birth_year,
         "age": age,
+        "gender": gender,
     }
 
 def get_user_details():
