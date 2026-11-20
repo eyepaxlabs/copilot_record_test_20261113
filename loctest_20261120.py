@@ -31,6 +31,9 @@ def get_user_details():
     name = input("Enter your full name: ").strip()
     email = input("Enter your email: ").strip()
     year_text = input("Enter your birth year: ").strip()
+    nickname = input("Enter your nickname: ").strip()
+    gender = input("Enter your gender: ").strip()
+    zodiacsign = input("Enter your zodiacsign: ").strip()
     if not name:
         print("Name cannot be empty.")
         return
